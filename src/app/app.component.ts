@@ -1,4 +1,4 @@
-import { Component, ViewChildren, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { DxDataGridComponent } from 'devextreme-angular';
 
 @Component({
@@ -10,17 +10,9 @@ export class AppComponent  {
   name = 'Angular 6';
   test = ['a', 'b'];
   tabsDS = [];
-  ds: Map<string, any[]> = new Map<string, any[]>();
-
-  @ViewChildren(DxDataGridComponent) grid : DxDataGridComponent;
 
   constructor() {
     this.PrepareTransactionDS();
-    this.tabsDS.forEach(
-      (tab) => {
-        this.ds.set(tab.tabName, []);
-      }
-    )
   }
 
   PrepareTransactionDS() {

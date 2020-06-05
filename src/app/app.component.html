@@ -19,7 +19,19 @@
           [allowDeleting]="true"
           [allowUpdating]="true" >
         </dxo-editing>
-        <dxi-column *ngFor="let column of tab.columns" [dataField]="column.name" ></dxi-column>
+        <div *ngFor="let column of tab.columns" >
+          <div [ngSwitch]="column.type">
+            <div *ngSwitchCase="'MasterId'"> <dxi-column [dataField]="column.name" ></dxi-column> </div>
+            <div *ngSwitchCase="'number'"> <dxi-column [dataField]="column.name" ></dxi-column> </div>
+            <div *ngSwitchDefault> <dxi-column [dataField]="column.name" ></dxi-column> </div>
+          </div>
+        </div>
       </dx-data-grid>
     </div>
 </dx-tab-panel>
+
+        <div *ngFor="let column of tabsDS[0].columns" >
+          <div [ngSwitch]="column.type">
+            <div *ngSwitchCase="'MasterId'"> abc </div>
+          </div>
+        </div>

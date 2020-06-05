@@ -20,18 +20,18 @@ export class AppComponent  {
       {
         tabName: "Items",
         columns: [
-          {name: 'Product'},
-          {name: 'Qty'},
-          {name: 'UnitRate' },
-          {name: 'Amount'},
-          {name: 'comments'}
+          {name: 'Product', type: 'MasterId', role: 'Products'},
+          {name: 'Qty', type: 'number', role: ''},
+          {name: 'UnitRate', type: 'number', role: '' },
+          {name: 'Amount', type: 'number', role: ''},
+          {name: 'comments', type: 'string', role: ''}
         ]
       }, {
         tabName: "Charges",
         columns: [
-          {name: 'ChargeType'},
-          {name: 'Charges Amount'},
-          {name: 'comments'}
+          {name: 'ChargeType', type: 'MasterId', role: 'Charges'},
+          {name: 'Charges Amount', type: 'number', role: ''},
+          {name: 'comments', type: 'string', role: ''}
         ]
       }
     ]

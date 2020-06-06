@@ -1,0 +1,17 @@
+<dx-tab-panel 
+    [dataSource]="datasourceTabs"
+    [scrollingEnabled]="true"
+    [showNavButtons]="true"
+    [selectedIndex]="0">
+    <div *dxTemplate="let tabName of 'title'">
+        <span> {{tabName.optionName}} </span>
+    </div>
+    <div *dxTemplate="let tab of 'item'; index as tabIndexForGrid">
+      <div *ngFor="let item of tab.options" >
+      <input name="report" [type]='item.type' click="RadioChecked(item.name, tab.optionName)">
+      <label> {{item.name}} </label>
+    </div>
+    </div>
+</dx-tab-panel>
+
+

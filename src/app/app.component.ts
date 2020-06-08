@@ -10,6 +10,7 @@ export class AppComponent  {
   name = 'Angular 6';
   test = ['a', 'b'];
   tabsDS = [];
+  isGroupRadioButtons: boolean = false;
 
   constructor() {
     this.PrepareTransactionDS();

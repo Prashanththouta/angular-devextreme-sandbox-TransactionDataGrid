@@ -8,7 +8,7 @@
     </div>
     <div *dxTemplate="let tab of 'item'; index as tabIndexForGrid">
       <div *ngFor="let item of tab.options" >
-      <input name="report" [type]='item.type' click="RadioChecked(item.name, tab.optionName)">
+      <input [name]="tab.optionName" [type]='item.type' >
       <label> {{item.name}} </label>
     </div>
     </div>

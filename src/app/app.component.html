@@ -7,7 +7,7 @@
         <span> {{tabName.tabName}} </span>
     </div>
     <div *dxTemplate="let tab of 'item'; index as tabIndexForGrid">
-      <dx-data-grid [dataSource]="[]"
+      <dx-data-grid [dataSource]="tabDS.get(tab.tabName)"
       [showBorders]="true"
       [columnAutoWidth]="true"
       [showColumnHeaders]="true"

@@ -14,6 +14,7 @@ export class AppComponent  {
 
   constructor() {
     this.PrepareTransactionDS();
+    this.PrepareDataSourceForTabs();
   }
 
   PrepareTransactionDS() {
@@ -36,6 +37,12 @@ export class AppComponent  {
         ]
       }
     ]
+  }
+
+  tabDS: Map<string, []> = new Map<string, []>();
+  PrepareDataSourceForTabs() {
+    this.tabDS.set('Items', []);
+    this.tabDS.set('Charges', []);
   }
 
 

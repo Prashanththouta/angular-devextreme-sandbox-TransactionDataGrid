@@ -14,6 +14,7 @@ export class AppComponent  {
   lookupDs = [];
 
   constructor() {
+     this.dropDownOptions = { width: 500 };
     this.PrepareTransactionDS();
     this.PrepareDataSourceForTabs();
     this.PrepareLookupDataSource();

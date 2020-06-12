@@ -11,10 +11,12 @@ export class AppComponent  {
   test = ['a', 'b'];
   tabsDS = [];
   isGroupRadioButtons: boolean = false;
+  lookupDs = [];
 
   constructor() {
     this.PrepareTransactionDS();
     this.PrepareDataSourceForTabs();
+    this.PrepareLookupDataSource();
   }
 
   PrepareTransactionDS() {
@@ -43,6 +45,16 @@ export class AppComponent  {
   PrepareDataSourceForTabs() {
     this.tabDS.set('Items', []);
     this.tabDS.set('Charges', []);
+  }
+
+  PrepareLookupDataSource() {
+    this.lookupDs = [
+      {MasterName: 'Product01', Id: 1, MasterGroup: 'Product Group'},
+      {MasterName: 'Product02', Id: 2, MasterGroup: 'Product Group'},
+      {MasterName: 'Product03', Id: 3, MasterGroup: 'Product Group'},
+      {MasterName: 'Product04', Id: 4, MasterGroup: 'Product Group'},
+      {MasterName: 'Product05', Id: 5, MasterGroup: 'Product Group'}
+    ]
   }
 
 

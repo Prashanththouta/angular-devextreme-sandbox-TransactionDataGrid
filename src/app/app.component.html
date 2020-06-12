@@ -21,7 +21,13 @@
         </dxo-editing>
         <div *ngFor="let column of tab.columns" >
           <div *ngIf="column.type === 'MasterId'">
-              <dxi-column [dataField]="column.name" ></dxi-column>
+              <dxi-column [dataField]="column.name" >
+              <dxo-lookup
+                [dataSource]="lookupDs"
+                displayExpr="MasterName"
+                valueExpr="Id">
+              </dxo-lookup>
+              </dxi-column>
           </div>
           <div *ngIf="column.type === 'number'">
               <dxi-column [dataField]="column.name" [dataType]='column.type'></dxi-column>

@@ -56,6 +56,11 @@ export class AppComponent  {
       {MasterName: 'Product05', Id: 5, MasterGroup: 'Product Group'}
     ]
   }
-
+ onSelectionChanged(selectedRowKeys, cellInfo, dropDownBoxComponent) {
+        cellInfo.setValue(selectedRowKeys[0]);
+        if(selectedRowKeys.length > 0) {
+            dropDownBoxComponent.close();
+        }
+    }
 
 }

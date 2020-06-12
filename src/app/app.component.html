@@ -24,8 +24,8 @@
               <dxi-column [dataField]="column.name"
               editCellTemplate="singleDropDownBoxEditor" >
               <dxo-lookup
-                [dataSource]="lookupDs"
-                displayExpr="MasterName"
+                [dataSource]="employees"
+                displayExpr="FullName"
                 valueExpr="Id">
               </dxo-lookup>
               </dxi-column>
@@ -53,9 +53,7 @@
                     [hoverStateEnabled]="true"
                     (onSelectionChanged)="onSelectionChanged($event.selectedRowKeys, cellInfo, e.component)"
                 >
-                    <dxi-column dataField="FullName"></dxi-column>
-                    <dxi-column dataField="Title"></dxi-column>
-                    <dxi-column dataField="Department"></dxi-column>
+
                     <dxo-paging [enabled]="true" [pageSize]="10"></dxo-paging>
                     <dxo-scrolling mode="virtual"></dxo-scrolling>
                     <dxo-selection mode="single" ></dxo-selection>

@@ -13,12 +13,24 @@ export class AppComponent  {
   isGroupRadioButtons: boolean = false;
   dropDownOptions;
   lookupDs = [];
+  employees;
 
   constructor() {
-     this.dropDownOptions = { width: 500 };
+     this.dropDownOptions = { width: 300 };
     this.PrepareTransactionDS();
     this.PrepareDataSourceForTabs();
     this.PrepareLookupDataSource();
+    this.PrepareProducts();
+  }
+
+  PrepareProducts() {
+    this.employees = [
+      {FullName: "Prashanth", ID: 1},
+      {FullName: "Prashanth 01", ID: 2},
+      {FullName: "Prashanth 02", ID: 3},
+      {FullName: "Prashanth 03", ID: 4},
+      {FullName: "Prashanth 04", ID: 5}
+    ]
   }
 
   PrepareTransactionDS() {

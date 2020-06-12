@@ -11,6 +11,7 @@ export class AppComponent  {
   test = ['a', 'b'];
   tabsDS = [];
   isGroupRadioButtons: boolean = false;
+  dropDownOptions;
   lookupDs = [];
 
   constructor() {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DxDataGridComponent } from 'devextreme-angular';
 
 @Component({
@@ -15,6 +15,7 @@ export class AppComponent  {
   lookupDs = [];
   employees;
   Tabcolumns : Map<string, string[]> = new Map<string, string[]>();
+  @ViewChild(DxDataGridComponent) grid : DxDataGridComponent;
 
   constructor() {
      this.dropDownOptions = { width: 300 };
@@ -22,6 +23,7 @@ export class AppComponent  {
     this.PrepareDataSourceForTabs();
     this.PrepareLookupDataSource();
     this.PrepareProducts();
+    this.AssignColumnNames();
   }
 
   PrepareProducts() {
@@ -92,5 +94,31 @@ export class AppComponent  {
             dropDownBoxComponent.close();
         }
     }
+  EditorPreparing(e) {
+    if(e.parentType === 'dataRow') {
+
+    }
+  }
+
+  PreparingContextMenu(e) {
+    if (e.row.rowType === "data") {
+      e.Items =[{  
+      text: "edit",  
+onItemClick: function () {  
+
+}  
+},  
+{  
+text: "insert",  
+onItemClick: function () {  
+}  
+},  
+{  
+text: "delete",  
+onItemClick: function () {  
+}  
+ }]
+    }
+  }
 
 }

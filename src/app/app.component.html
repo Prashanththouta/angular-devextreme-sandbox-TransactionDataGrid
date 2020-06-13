@@ -13,7 +13,9 @@
       [showColumnHeaders]="true"
       [showColumnLines]="true"
       [columns]="Tabcolumns.get(tab.tabName)"
-      [showRowLines]="true" >
+      [showRowLines]="true" 
+      (onContextMenuPreparing) ="PreparingContextMenu($event)"
+      (onEditorPreparing)="EditorPreparing($event)" >
         <dxo-editing 
           mode="cell"
           [allowAdding]="true"

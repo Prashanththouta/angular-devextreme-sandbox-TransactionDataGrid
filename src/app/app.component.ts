@@ -104,7 +104,7 @@ export class AppComponent  {
     if (e.row.rowType === "data") {
       e.Items =[{  
       text: "edit",  
-onItemClick: function () {  
+      onItemClick: function () {  
 
 }  
 },  

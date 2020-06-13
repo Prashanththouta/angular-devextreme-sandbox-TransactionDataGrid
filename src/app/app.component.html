@@ -37,8 +37,7 @@
               <dxi-column [dataField]="column.name" [dataType]='column.type'></dxi-column>
           </div>
           <div *dxTemplate="let cellInfo of 'singleDropDownBoxEditor'">
-            <dx-autocomlete
-            
+            <dx-autocomplete
             [dataSource]="employees"
             [(value)]="cellInfo.value"
             displayExpr="FullName"

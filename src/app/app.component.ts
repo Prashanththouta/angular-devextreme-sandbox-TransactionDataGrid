@@ -14,6 +14,7 @@ export class AppComponent  {
   dropDownOptions;
   lookupDs = [];
   employees;
+  Tabcolumns : Map<string, string[]> = new Map<string, string[]>();
 
   constructor() {
      this.dropDownOptions = { width: 300 };
@@ -53,6 +54,21 @@ export class AppComponent  {
         ]
       }
     ]
+  }
+
+  AssignColumnNames() {
+    let columns : string[] = [];
+    this.tabsDS.forEach(
+      (tab) => {
+        tab.columns.forEach(
+          (col) => {
+            columns.push(col.name);
+          }
+        )
+        this.Tabcolumns.set(tab.tabName, columns);
+        columns = [];
+      }
+    )
   }
 
   tabDS: Map<string, []> = new Map<string, []>();

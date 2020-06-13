@@ -12,6 +12,7 @@
       [columnAutoWidth]="true"
       [showColumnHeaders]="true"
       [showColumnLines]="true"
+      [columns]="Tabcolumns.get(tab.tabName)"
       [showRowLines]="true" >
         <dxo-editing 
           mode="cell"
@@ -19,49 +20,7 @@
           [allowDeleting]="true"
           [allowUpdating]="true" >
         </dxo-editing>
-        <div *ngFor="let column of tab.columns" >
-          <div *ngIf="column.type === 'MasterId'">
-              <dxi-column [dataField]="column.name"
-              editCellTemplate="singleDropDownBoxEditor" >
-              <dxo-lookup
-                [dataSource]="employees"
-                displayExpr="FullName"
-                valueExpr="Id">
-              </dxo-lookup>
-              </dxi-column>
-          </div>
-          <div *ngIf="column.type === 'number'">
-              <dxi-column [dataField]="column.name" [dataType]='column.type'></dxi-column>
-          </div>
-          <div *ngIf="column.type === 'string'">
-              <dxi-column [dataField]="column.name" [dataType]='column.type'></dxi-column>
-          </div>
-          <div *dxTemplate="let cellInfo of 'singleDropDownBoxEditor'">
-            <dx-drop-down-box
-            [dropDownOptions]="dropDownOptions"
-            [dataSource]="employees"
-            [(value)]="cellInfo.value"
-            displayExpr="FullName"
-            valueExpr="ID"
-            contentTemplate="contentTemplate">
-            <div *dxTemplate="let e of 'contentTemplate'">
-                <dx-data-grid
-                    [dataSource]="employees"
-                    [remoteOperations]="true"
-                    [height]="250"
-                    [selectedRowKeys]="[cellInfo.value]"
-                    [hoverStateEnabled]="true"
-                    (onSelectionChanged)="onSelectionChanged($event.selectedRowKeys, cellInfo, e.component)"
-                >
 
-                    <dxo-paging [enabled]="true" [pageSize]="10"></dxo-paging>
-                    <dxo-scrolling mode="virtual"></dxo-scrolling>
-                    <dxo-selection mode="single" ></dxo-selection>
-                </dx-data-grid>
-            </div>
-            </dx-drop-down-box>
-       </div>
-        </div>
       </dx-data-grid>
     </div>
 </dx-tab-panel>

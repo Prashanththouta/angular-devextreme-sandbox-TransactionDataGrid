@@ -71,3 +71,18 @@
   Groupwise radio button enable
   <hello ></hello>
 </div>
+
+
+<div>
+   <div class="dx-fieldset">
+    <div class="dx-field" *ngFor= "let c of dummyColumns">
+      <div *ngIf="c !== 'c1' ">
+              <div class="dx-field-label"> {{c}}</div>
+        <div class="dx-field-value">
+          <dx-text-box value="c"></dx-text-box>
+        </div>
+      </div>
+      </div>
+
+    </div>
+</div>

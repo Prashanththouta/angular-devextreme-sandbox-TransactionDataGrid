@@ -17,13 +17,16 @@ export class AppComponent  {
   Tabcolumns : Map<string, string[]> = new Map<string, string[]>();
   @ViewChild(DxDataGridComponent) grid : DxDataGridComponent;
 
+  dummyColumns: string[] = [];
+
   constructor() {
-     this.dropDownOptions = { width: 300 };
+    this.dropDownOptions = { width: 300 };
     this.PrepareTransactionDS();
     this.PrepareDataSourceForTabs();
     this.PrepareLookupDataSource();
     this.PrepareProducts();
     this.AssignColumnNames();
+    this.dummyColumns = ["c1","c2","c3","c4","c5","c6","c7"];
   }
 
   PrepareProducts() {
